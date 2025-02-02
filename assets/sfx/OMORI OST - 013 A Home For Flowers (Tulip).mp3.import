@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b02274dgekoke"
+path="res://.godot/imported/OMORI OST - 013 A Home For Flowers (Tulip).mp3-8d98d45c78123f3ef6443b72d6d5b271.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/OMORI OST - 013 A Home For Flowers (Tulip).mp3"
+dest_files=["res://.godot/imported/OMORI OST - 013 A Home For Flowers (Tulip).mp3-8d98d45c78123f3ef6443b72d6d5b271.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
