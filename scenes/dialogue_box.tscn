@@ -1,0 +1,297 @@
+[gd_scene load_steps=30 format=3 uid="uid://tram6ayw0ali"]
+
+[ext_resource type="Texture2D" uid="uid://dmq8bg005xny5" path="res://assets/sprites/output (4).png" id="1_fs66e"]
+[ext_resource type="Script" path="res://scenes/dialogue_box.gd" id="1_jouu4"]
+[ext_resource type="AudioStream" uid="uid://1rpa3s4l4svq" path="res://assets/sfx/Talking (Text Box)  OMORI SFX1.wav" id="2_b3rll"]
+[ext_resource type="Texture2D" uid="uid://bcubyi6wws4k0" path="res://assets/sprites/output-onlinepngtools (11).png" id="2_v3mty"]
+[ext_resource type="AudioStream" uid="uid://chib407k31w1h" path="res://assets/sfx/Talking (Text Box)  OMORI SFX2.wav" id="3_sis07"]
+[ext_resource type="AudioStream" uid="uid://d33px1fn1r2x3" path="res://assets/sfx/Talking (Text Box)  OMORI SFX3.wav" id="4_wrx8f"]
+[ext_resource type="AudioStream" uid="uid://cql7jkl23lvjv" path="res://assets/sfx/Talking (Text Box)  OMORI SFX4.wav" id="5_ed2ly"]
+[ext_resource type="AudioStream" uid="uid://tbrkpxyynfuk" path="res://assets/sfx/Talking (Text Box)  OMORI SFX.wav" id="6_ay338"]
+[ext_resource type="FontFile" uid="uid://pi7rl7h1bdxa" path="res://assets/font/OMORI_GAME2.ttf" id="8_d4nvv"]
+[ext_resource type="Texture2D" uid="uid://cmbqe7c5pbvtg" path="res://assets/sprites/PC Computer - Omori - Battle UI.png" id="9_jq2to"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7cx3i"]
+font = ExtResource("8_d4nvv")
+font_size = 28
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsv5p"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(323, 257, 104, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amqvy"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(430, 257, 104, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e8gi"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(537, 257, 104, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ep5e"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(645, 257, 104, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2feo8"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(752, 257, 104, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l6os"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(859, 257, 104, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5ubg"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(2, 135, 104, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adp4r"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(109, 135, 104, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vifc7"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(216, 135, 104, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urr6m"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(2, 15, 104, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aptqc"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(109, 15, 104, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0npk"]
+atlas = ExtResource("2_v3mty")
+region = Rect2(216, 15, 104, 104)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ecuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsv5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amqvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e8gi")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ep5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2feo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l6os")
+}],
+"loop": true,
+"name": &"goof",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5ubg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adp4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vifc7")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urr6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aptqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0npk")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5kmy6"]
+font = ExtResource("8_d4nvv")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_cdli5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueContainer/MarginContainer/DialogueText:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(590, 286)]
+}
+
+[sub_resource type="Animation" id="Animation_klgfv"]
+resource_name = "hand"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(590, 286), Vector2(600, 286), Vector2(590, 286)]
+}
+
+[sub_resource type="Animation" id="Animation_3ksh7"]
+resource_name = "typewriter_effect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueContainer/MarginContainer/DialogueText:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nd563"]
+_data = {
+"RESET": SubResource("Animation_cdli5"),
+"hand": SubResource("Animation_klgfv"),
+"typewriter_effect": SubResource("Animation_3ksh7")
+}
+
+[node name="DialogueBox" type="Control"]
+z_index = 6
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -74.0
+offset_right = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jouu4")
+sfx_list = Array[AudioStream]([ExtResource("2_b3rll"), ExtResource("3_sis07"), ExtResource("4_wrx8f"), ExtResource("5_ed2ly"), ExtResource("6_ay338")])
+
+[node name="CharacterNameContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 167.0
+offset_right = 99.0
+offset_bottom = 195.0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CharacterNameContainer"]
+layout_mode = 2
+texture = ExtResource("1_fs66e")
+expand_mode = 2
+
+[node name="NC" type="MarginContainer" parent="CharacterNameContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="name" type="Label" parent="CharacterNameContainer/NC"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Kel"
+label_settings = SubResource("LabelSettings_7cx3i")
+
+[node name="PlayerImgContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 83.0
+offset_right = 642.0
+offset_bottom = 190.0
+
+[node name="BG" type="TextureRect" parent="PlayerImgContainer"]
+layout_mode = 2
+texture = ExtResource("1_fs66e")
+expand_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerImgContainer/BG"]
+position = Vector2(50, 50)
+scale = Vector2(0.833533, 0.833533)
+sprite_frames = SubResource("SpriteFrames_4ecuf")
+animation = &"neutral"
+
+[node name="DialogueContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 199.0
+offset_right = 649.0
+offset_bottom = 310.0
+
+[node name="TextureRect" type="TextureRect" parent="DialogueContainer"]
+layout_mode = 2
+texture = ExtResource("1_fs66e")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 12
+
+[node name="DialogueText" type="Label" parent="DialogueContainer/MarginContainer"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+size_flags_vertical = 1
+text = "i was never built for this "
+label_settings = SubResource("LabelSettings_5kmy6")
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nd563")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="hand" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 590.0
+offset_top = 286.0
+offset_right = 619.0
+offset_bottom = 301.0
+texture = ExtResource("9_jq2to")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
