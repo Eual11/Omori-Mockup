@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://wgy087sx2i24"]
+
+[ext_resource type="Texture2D" uid="uid://du1tbcq841veg" path="res://assets/sprites/output-onlinepngtools (10).png" id="1_43bum"]
+[ext_resource type="Script" path="res://kel.gd" id="1_ab7m2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g71gg"]
+atlas = ExtResource("1_43bum")
+region = Rect2(169, 24, 20, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5eh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g71gg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58kr0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vh1m"]
+radius = 14.0
+height = 40.0
+
+[node name="Kel" type="CharacterBody2D"]
+script = ExtResource("1_ab7m2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_c5eh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_58kr0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_4vh1m")
+debug_color = Color(0.267852, 0.629745, 0.189066, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
