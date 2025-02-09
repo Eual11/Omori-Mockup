@@ -5,18 +5,9 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var player_in_range: bool = false
 var messages: Array[String] = [
-	"Hey!! Hilu, it me Kel! Eual asked me to deliver this gift for you",
-	"He wants you to know that you are one of the best people he met in his life",
-	"and it is totally fun to hang out with you all the time!",
-	"You should know that you are a gift to this world, no one is like you!",
-	"You can be passionate about things and be artistic as much as you like", 
-	"You have people that adore and support you... hehe",
-	"Me and Eual are one of them",
-	"and Whenever you are faced with adversity, don't ever give up!",
-	"Try and try and try! and never ever give up and...",
-	"and You will acheive all of your dreams!",
-	"Finally you will buy Eual many things like 3D printer",
-	"Anyways, It was nice to meet you! goodbye, see you later"
+	"Hey Eual!!",
+	"You see tired today",
+	"Don't worry everything is gonna be okay!"
 ]
 
 var emotion_map ={
