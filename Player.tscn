@@ -118,7 +118,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhsdg"]
 height = 32.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(275, 146)
 scale = Vector2(2, 2)
 script = ExtResource("1_o5ur5")
