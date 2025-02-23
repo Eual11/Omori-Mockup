@@ -2,7 +2,7 @@
 extends Node
 
 static var is_dialogue_active := false
-var dialogue_ui: Control
+var dialogue_ui: CanvasLayer
 
 
 func _ready():

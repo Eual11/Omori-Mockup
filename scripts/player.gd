@@ -4,9 +4,11 @@ extends CharacterBody2D
 
 
 @onready var animated_sprite:AnimatedSprite2D = $AnimatedSprite2D
+@onready var camera:Camera2D = $Camera2D
 
 func _ready():
 	animated_sprite.animation =&"idle"
+	camera.limit_bottom = get_viewport_rect().size.y
 	
 
 #maping direction to idle frame sprites
