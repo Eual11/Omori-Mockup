@@ -1,15 +1,15 @@
-extends Control
+extends CanvasLayer
 
 
 signal dialogue_finished
 @export var sfx_list: Array[AudioStream] =[]
-@onready var audio_player = $AudioStreamPlayer
+@onready var audio_player = $DialogueBox/AudioStreamPlayer
 var current_line := 0
 var messages: Array[String] = []
 var emotion_map: Dictionary ={}
 
 func _ready():
-	$PlayerImgContainer/BG/AnimatedSprite2D.play()
+	$DialogueBox/PlayerImgContainer/BG/AnimatedSprite2D.play()
 func start_dialogue(message_array: Array[String],  em_map:Dictionary):
 	messages = message_array
 	emotion_map = em_map
@@ -25,16 +25,16 @@ func play_random_sfx():
 
 func update_player_image():
 	if(current_line in emotion_map):
-		$PlayerImgContainer/BG/AnimatedSprite2D.animation =emotion_map[current_line]
+		$DialogueBox/PlayerImgContainer/BG/AnimatedSprite2D.animation =emotion_map[current_line]
 	else:
-		$PlayerImgContainer/BG/AnimatedSprite2D.animation ="neutral"
+		$DialogueBox/PlayerImgContainer/BG/AnimatedSprite2D.animation ="neutral"
 
 func update_dialogue():
-	$DialogueContainer/MarginContainer/DialogueText.text = messages[current_line]
+	$DialogueBox/DialogueContainer/MarginContainer/DialogueText.text = messages[current_line]
 	update_player_image()
 	play_random_sfx()
-	$hand.hide()
-	$AnimationPlayer.play("typewriter_effect")
+	$DialogueBox/hand.hide()
+	$DialogueBox/AnimationPlayer.play("typewriter_effect")
 
 func _input(event: InputEvent):
 	if visible and event.is_action_pressed("ui_accept"):
@@ -50,5 +50,5 @@ func _input(event: InputEvent):
 func _on_animation_player_animation_finished(anim_name):
 	if(anim_name == "typewriter_effect"):
 		audio_player.stop()
-		$hand.show()
-		$AnimationPlayer.play("hand")
+		$DialogueBox/hand.show()
+		$DialogueBox/AnimationPlayer.play("hand")

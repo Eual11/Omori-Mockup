@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://j3y1kb5koour"]
+[gd_scene load_steps=18 format=4 uid="uid://j3y1kb5koour"]
 
 [ext_resource type="Texture2D" uid="uid://byfmuwtv0qr33" path="res://assets/tilesets/day_tileset.png" id="1_63v0n"]
 [ext_resource type="Texture2D" uid="uid://dg5104newsh2x" path="res://assets/tilesets/building_tileset.png" id="2_leex5"]
@@ -12363,7 +12363,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3hrwx")
 sources/1 = SubResource("TileSetAtlasSource_g51wf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnpet"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7craf"]
+size = Vector2(806, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6i03l"]
+size = Vector2(440, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlurh"]
 size = Vector2(667, 24)
 
 [node name="World" type="Node2D"]
@@ -12401,29 +12407,27 @@ scale = Vector2(1.2, 1.2)
 stream = ExtResource("6_mac5j")
 volume_db = -23.772
 pitch_scale = 0.66
-autoplay = true
 
 [node name="ost" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_4p5j3")
 volume_db = -1.981
-autoplay = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(395, 2)
-shape = SubResource("RectangleShape2D_gnpet")
+position = Vector2(406, -12)
+shape = SubResource("RectangleShape2D_7craf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D"]
-position = Vector2(806, 305.5)
+position = Vector2(806, 214)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_gnpet")
+shape = SubResource("RectangleShape2D_6i03l")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D"]
 position = Vector2(-11, 307)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_gnpet")
+shape = SubResource("RectangleShape2D_xlurh")
